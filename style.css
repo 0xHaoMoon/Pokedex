@@ -75,7 +75,7 @@ body{
 
 .info-Box-Middle-Left{
     width: 40%;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -112,20 +112,13 @@ body{
 }
 
 
-.Box1{
-    background-image: url('/MockUp/d2k6bdr-7dfaae85-2444-4b72-b653-54d38de39b9a.png');
-    height: 30vh;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 100vw;
-}
-
 .info-Name-Top{
     height: 20px;
     margin-top: 10px;
     background-color: #EC3031;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
+    width: 152px;
 }
 
 .info-Name-Bottom{
@@ -136,6 +129,7 @@ body{
     border-bottom: 1px solid #000000;
     border-left: 1px solid #000000;
     border-right: 1px solid #000000;
+    width: 150px;
 }
 
 .pokeball-png{
@@ -276,7 +270,7 @@ body{
 }
 
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 460px) {
     .info-Box {
         height: 50vh;
     }
@@ -292,6 +286,38 @@ body{
   .info-Box-Middle {
     height: 30vh;
     display: flex;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.info-Type {
+    width: 78px;
+}
+
+.info-Weight-Top {
+    width: 219px;
+}
+
+.info-Weight-Bottom {
+    width: 219px;
+}
+
+.info-Box-Middle-Left {
+    width: 50%;
+}
+
+.margin-left-right {
+    margin-left: 0;
+    margin-right: 0;
+    width: 50%;
+}
+
+.info-Name-Top {
+    width: 216px;
+}
+
+.info-Name-Bottom {
+    width: 214px;
 }
 }
 
