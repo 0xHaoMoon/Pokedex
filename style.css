@@ -48,10 +48,7 @@ body{
     margin-Left: 10px;
 }
 
-.info-Type
-{
-  border: 1px solid black;
-}
+
 
 .info-Box-Header{
     height: 3vh;
@@ -109,6 +106,7 @@ body{
 .info-Type{
     height: 3vh;
     width: 16vw;
+    color: white;
 }
 
 
@@ -118,7 +116,7 @@ body{
     background-color: #EC3031;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    width: 152px;
+    width: 216px;
 }
 
 .info-Name-Bottom{
@@ -129,7 +127,7 @@ body{
     border-bottom: 1px solid #000000;
     border-left: 1px solid #000000;
     border-right: 1px solid #000000;
-    width: 150px;
+    width: 214px;
 }
 
 .pokeball-png{
@@ -312,12 +310,5 @@ body{
     width: 50%;
 }
 
-.info-Name-Top {
-    width: 216px;
-}
-
-.info-Name-Bottom {
-    width: 214px;
-}
 }
 
