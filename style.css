@@ -257,6 +257,15 @@ body{
     margin: 5px;
 }
 
+.single-Pokemon:hover img {
+    transform: scale(1.2);
+    z-index: 1;
+    position: relative;
+    top: -10px;
+    cursor: pointer;
+  }
+  
+
 .single-Pokemon img{
     width: 100px;
     height: 100px;
