@@ -60,6 +60,21 @@ body{
     padding-left: 10px;
 }
 
+.info-Box-Header input {
+    height: 2vh;
+    background-color: #EC3031;
+    font-family: 'pkm-font';
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    }
+
+    .info-Box-Header ::placeholder {
+        color: white;
+        }
+
+
 .info-Box-Middle{
     height: 24vh;
     display: flex;

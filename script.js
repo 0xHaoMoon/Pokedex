@@ -19,7 +19,7 @@ async function getPokemonData(id) {
 
     async function loadPokemon() {
         const allPokemonElement = document.getElementById('all-Pokemon');
-        for (let i = 1; i <= 50; i++) {
+        for (let i = 1; i <= 151; i++) {
           const pokemonData = await getPokemonData(i);
           const pokemonHTML = generatePokemonHTML(pokemonData, i);
           allPokemonElement.innerHTML += pokemonHTML;
@@ -110,8 +110,6 @@ async function getPokemonData(id) {
     }
   }
   
-  
-
 
   async function loadWT(id){
     const pokemonData = await getPokemonData(id);
@@ -126,6 +124,21 @@ async function getPokemonData(id) {
     document.getElementById('HT').innerHTML = `${HT}`;
   }
 
+
+  function searchPokemon() {
+    const input = document.querySelector('input[type="text"]');
+    const filter = input.value.toUpperCase();
+    const pokemonDivs = document.querySelectorAll('.single-Pokemon');
+    for (let i = 0; i < pokemonDivs.length; i++) {
+      const name = pokemonDivs[i].querySelector('.flex-around span:first-child').innerHTML.toUpperCase();
+      if (name.indexOf(filter) > -1) {
+        pokemonDivs[i].style.display = '';
+      } else {
+        pokemonDivs[i].style.display = 'none';
+      }
+    }
+  }
+  
 
   
 
