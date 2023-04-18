@@ -58,6 +58,7 @@ body{
     display: flex;
     align-items: center;
     padding-left: 10px;
+    justify-content: center;
 }
 
 .info-Box-Header input {
@@ -68,6 +69,7 @@ body{
     display: flex;
     align-items: center;
     padding-left: 10px;
+    width: 100px;
     }
 
     .info-Box-Header ::placeholder {
@@ -276,7 +278,7 @@ body{
 
 .single-Pokemon span{
     font-family: 'pkm-font';
-    font-size: 8px;
+    font-size: 7px;
     margin-top: -10px;
 }
 
