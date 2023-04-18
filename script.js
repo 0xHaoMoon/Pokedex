@@ -19,7 +19,7 @@ async function getPokemonData(id) {
 
     async function loadPokemon() {
         const allPokemonElement = document.getElementById('all-Pokemon');
-        for (let i = 1; i <= 151; i++) {
+        for (let i = 1; i <= 20; i++) {
           const pokemonData = await getPokemonData(i);
           const pokemonHTML = generatePokemonHTML(pokemonData, i);
           allPokemonElement.innerHTML += pokemonHTML;
