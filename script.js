@@ -139,6 +139,30 @@ async function getPokemonData(id) {
     }
   }
   
+  async function loadPokemonInRange(startId, endId) {
+    const allPokemonElement = document.getElementById('all-Pokemon');
+    for (let id = startId; id <= endId; id++) {
+      const pokemonData = await getPokemonData(id);
+      const pokemonHTML = generatePokemonHTML(pokemonData, id);
+      allPokemonElement.innerHTML += pokemonHTML;
+    }
+  }
+  
+  let loadingMore = false;
+  async function handleScroll() {
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    if (scrollTop + clientHeight >= scrollHeight - 5 && !loadingMore) {
+      loadingMore = true;
+      const pokemonDivs = document.querySelectorAll('.single-Pokemon');
+      const lastPokemonId = parseInt(pokemonDivs[pokemonDivs.length - 1].id.replace('single-Pokemon', ''));
+      await loadPokemonInRange(lastPokemonId + 1, lastPokemonId + 20);
+      loadingMore = false;
+    }
+  }
+  
+  window.addEventListener('scroll', handleScroll);
+  
+  
 
   
 
