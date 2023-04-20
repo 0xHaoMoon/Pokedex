@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'pkm-font';
-    src: url(/fonts/PokemonGb-RAeo.ttf) format('truetype');
+    src: url(./fonts/PokemonGb-RAeo.ttf) format('truetype');
   }
   
 
@@ -51,7 +51,7 @@ body{
 
 
 .info-Box-Header{
-    height: 3vh;
+    height: 4vh;
     background-color: #EC3031;
     font-family: 'pkm-font';
     color: white;
@@ -59,6 +59,47 @@ body{
     align-items: center;
     padding-left: 10px;
     justify-content: center;
+}
+
+.buttonRegion {
+    background-color: white;
+    color: black;
+    font-family: 'pkm-font';
+    border-radius: 5px;
+    border: none;
+    padding: 2px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  .buttonRegion:hover {
+    background-color: #E0da191F;
+  }
+
+.middle-line{
+    background-color: black;
+    font-family: 'pkm-font';
+    color: white;
+    display: flex;
+    padding-left: 10px;
+    height: 1vh;
+    align-items: center;
+
+}
+
+
+.info-region{
+    background-color: white;
+    font-family: 'pkm-font';
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    justify-content: center;
+    height: 12vh;
+    flex-wrap: wrap;
 }
 
 .info-Box-Header input {

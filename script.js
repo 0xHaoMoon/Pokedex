@@ -1,5 +1,5 @@
 function render() {
-    loadPokemon();
+    loadPokemon(1,85);
   }
   
 
@@ -17,14 +17,14 @@ async function getPokemonData(id) {
   }
 
 
-    async function loadPokemon() {
-        const allPokemonElement = document.getElementById('all-Pokemon');
-        for (let i = 1; i <= 20; i++) {
-          const pokemonData = await getPokemonData(i);
-          const pokemonHTML = generatePokemonHTML(pokemonData, i);
-          allPokemonElement.innerHTML += pokemonHTML;
-        }
-      }
+  async function loadPokemon(startingID,endingID) {
+    const allPokemonElement = document.getElementById('all-Pokemon');
+    for (let i = startingID; i <= endingID; i++) {
+      const pokemonData = await getPokemonData(i);
+      const pokemonHTML = generatePokemonHTML(pokemonData, i);
+      allPokemonElement.innerHTML += pokemonHTML;
+    }
+  }
   
 
   function generatePokemonHTML(pokemonData, id) {
@@ -40,7 +40,76 @@ async function getPokemonData(id) {
       </div>
     `;
   }
+
+
+  function deleteBox() {
+    const allPokemonElement = document.getElementById('all-Pokemon');
+    allPokemonElement.innerHTML = '';
+
+  }
+
+
+  async function loadAll() {
+    deleteBox();
+    await loadPokemon(1,85);
+  }
   
+
+
+  async function loadKanto() {
+    deleteBox();
+    await loadPokemon(1,85);
+    loadPokemonInRange(1,151);
+
+  }
+  
+  async function loadJohto() {
+    deleteBox();
+    await loadPokemon(152, 236);
+    loadPokemonInRange(152,251);
+  }
+  
+  async function loadHoenn() {
+    deleteBox();
+    await loadPokemon(252,(252+85));
+    loadPokemonInRange(252,386)
+  }
+  
+  async function loadSinnoh() {
+    deleteBox();
+    await loadPokemon(387,(387+85));
+    loadPokemonInRange(387,494)
+  }
+  
+  async function loadEinall() {
+    deleteBox();
+    await loadPokemon(495,(495+85));
+    loadPokemonInRange(495,649)
+  }
+  
+  async function loadKalos() {
+    deleteBox();
+    await loadPokemon(650,721);
+    loadPokemonInRange(650,721)
+  }
+  
+  async function loadAlola() {
+    deleteBox();
+    await loadPokemon(722,(722+85));
+    loadPokemonInRange(722,809)
+  }
+  
+  async function loadGalar() {
+    deleteBox();
+    await loadPokemon(810,(894));
+    loadPokemonInRange(810,905)
+  }
+  
+  async function loadPaldea() {
+    deleteBox();
+    await loadPokemon(906,(906+85));
+    loadPokemonInRange(906,1008)
+  }
 
   async function infoPkm(id) {
     loadSprite(id)
@@ -149,6 +218,7 @@ async function getPokemonData(id) {
   }
   
   let loadingMore = false;
+  
   async function handleScroll() {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
     if (scrollTop + clientHeight >= scrollHeight - 5 && !loadingMore) {
