@@ -51,64 +51,54 @@ async function getPokemonData(id) {
 
   async function loadAll() {
     deleteBox();
-    await loadPokemon(1,85);
+    await loadPokemon(1,24);
   }
   
 
-
   async function loadKanto() {
     deleteBox();
-    await loadPokemon(1,85);
-    loadPokemonInRange(1,151);
+    await loadPokemon(1,24);
 
   }
   
   async function loadJohto() {
     deleteBox();
-    await loadPokemon(152, 236);
-    loadPokemonInRange(152,251);
+    await loadPokemon(152, 174);
   }
   
   async function loadHoenn() {
     deleteBox();
-    await loadPokemon(252,(252+85));
-    loadPokemonInRange(252,386)
+    await loadPokemon(252,(252+24));
   }
   
   async function loadSinnoh() {
     deleteBox();
-    await loadPokemon(387,(387+85));
-    loadPokemonInRange(387,494)
+    await loadPokemon(387,(387+24));
   }
   
   async function loadEinall() {
     deleteBox();
-    await loadPokemon(495,(495+85));
-    loadPokemonInRange(495,649)
+    await loadPokemon(495,(495+24));
   }
   
   async function loadKalos() {
     deleteBox();
-    await loadPokemon(650,721);
-    loadPokemonInRange(650,721)
+    await loadPokemon(650,674);
   }
   
   async function loadAlola() {
     deleteBox();
-    await loadPokemon(722,(722+85));
-    loadPokemonInRange(722,809)
+    await loadPokemon(722,(722+24));
   }
   
   async function loadGalar() {
     deleteBox();
-    await loadPokemon(810,(894));
-    loadPokemonInRange(810,905)
+    await loadPokemon(810,(834));
   }
   
   async function loadPaldea() {
     deleteBox();
-    await loadPokemon(906,(906+85));
-    loadPokemonInRange(906,1008)
+    await loadPokemon(906,(906+24));
   }
 
   async function infoPkm(id) {
@@ -218,7 +208,7 @@ async function getPokemonData(id) {
       loadingMore = true;
       const pokemonDivs = document.querySelectorAll('.single-Pokemon');
       const lastPokemonId = parseInt(pokemonDivs[pokemonDivs.length - 1].id.replace('single-Pokemon', ''));
-      await loadPokemonInRange(lastPokemonId + 1, lastPokemonId + 20);
+      await loadPokemon(lastPokemonId + 1, lastPokemonId + 20);
       loadingMore = false;
     }
   }

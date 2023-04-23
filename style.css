@@ -9,6 +9,7 @@ body{
     background-color: #EDEDED;
 }
 
+
 .info-Box{
     height: 47vh;
 }
@@ -110,7 +111,7 @@ body{
     display: flex;
     align-items: center;
     padding-left: 10px;
-    width: 100px;
+    width: 180px;
     }
 
     .info-Box-Header ::placeholder {
@@ -378,6 +379,21 @@ body{
     margin-left: 0;
     margin-right: 0;
     width: 50%;
+}
+
+.single-Pokemon {
+    width: 200px;
+    height: 200px;
+}
+
+.single-Pokemon img {
+    width: 200px;
+    height: 200px;
+}
+
+.single-Pokemon span {
+    font-size: 15px;
+    margin-top: -23px;
 }
 
 }
