@@ -208,14 +208,7 @@ async function getPokemonData(id) {
     }
   }
   
-  async function loadPokemonInRange(startId, endId) {
-    const allPokemonElement = document.getElementById('all-Pokemon');
-    for (let id = startId; id <= endId; id++) {
-      const pokemonData = await getPokemonData(id);
-      const pokemonHTML = generatePokemonHTML(pokemonData, id);
-      allPokemonElement.innerHTML += pokemonHTML;
-    }
-  }
+
   
   let loadingMore = false;
   
