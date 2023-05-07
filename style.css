@@ -8,8 +8,9 @@ body{
     margin: 0;
     background-color: #EDEDED;
 }
-
-
+.width40{
+    width: 40%;
+}
 .info-Box{
     height: 45vh;
 }
@@ -144,12 +145,11 @@ body{
 }
 
 
-
 .info-Box-Middle-Left{
-    width: 40%;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    height: 100%;
 }
 
 .info-Box-Middle-Right{
@@ -276,7 +276,7 @@ body{
 
 .info-Box-Footer{
     width: 90vw;
-    height: 7vh;
+    height: 11vh;
     margin-left: 5vw;
     margin-right: 5vw;
     display: flex;
@@ -289,7 +289,7 @@ body{
 .info-Text{
     background-color: white;
     width: 80vw;
-    height: 6vh;
+    height: 8vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -351,7 +351,7 @@ body{
 }
 
 .margin-left-right{
-    margin-left: 5vw;
+    margin-left: 2vw;
     margin-right: 5vw;
 }
 

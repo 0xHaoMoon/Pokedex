@@ -1,5 +1,5 @@
 function render() {
-    loadPokemon(1,27);
+    loadPokemon(1,151);
   }
   
 
@@ -45,55 +45,30 @@ async function getPokemonData(id) {
   function deleteBox() {
     const allPokemonElement = document.getElementById('all-Pokemon');
     allPokemonElement.innerHTML = '';
-
   }
 
 
-  async function loadKanto() {
+  async function loadRegion(region){
     deleteBox();
-    await loadPokemon(1,27);
+    if (region === 'Kanto') {
+      await loadPokemon(1, 151);
+    } else if (region === 'Johto') {
+      await loadPokemon(152, 178);
+    } else if (region === 'Hoenn') {
+      await loadPokemon(179, 286);
+    } else if (region === 'Sinnoh') {
+      await loadPokemon(387, 493);
+    } else if (region === 'Einall') {
+      await loadPokemon(494, 649);
+    } else if (region === 'Kalos') {
+      await loadPokemon(650, 721);
+    } else if (region === 'Alola') {
+      await loadPokemon(722, 809);
+    } else if (region === 'Galar') {
+      await loadPokemon(810, 898);
+    }
+  }
 
-  }
-  
-  async function loadJohto() {
-    deleteBox();
-    await loadPokemon(152, 178);
-  }
-  
-  async function loadHoenn() {
-    deleteBox();
-    await loadPokemon(252,(252+28));
-  }
-  
-  async function loadSinnoh() {
-    deleteBox();
-    await loadPokemon(387,(387+28));
-  }
-  
-  async function loadEinall() {
-    deleteBox();
-    await loadPokemon(495,(495+28));
-  }
-  
-  async function loadKalos() {
-    deleteBox();
-    await loadPokemon(650,677);
-  }
-  
-  async function loadAlola() {
-    deleteBox();
-    await loadPokemon(722,(722+28));
-  }
-  
-  async function loadGalar() {
-    deleteBox();
-    await loadPokemon(810,(838));
-  }
-  
-  async function loadPaldea() {
-    deleteBox();
-    await loadPokemon(906,(906+28));
-  }
 
   async function infoPkm(id) {
     loadSprite(id)
@@ -191,24 +166,7 @@ async function getPokemonData(id) {
       }
     }
   }
-  
 
-  let loadingMore = false;
-  
-  async function handleScroll() {
-    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-    if (scrollTop + clientHeight >= scrollHeight - 5 && !loadingMore) {
-      loadingMore = true;
-      const pokemonDivs = document.querySelectorAll('.single-Pokemon');
-      const lastPokemonId = parseInt(pokemonDivs[pokemonDivs.length - 1].id.replace('single-Pokemon', ''));
-      await loadPokemon(lastPokemonId + 1, lastPokemonId + 20);
-      loadingMore = false;
-    }
-  }
-  
-  window.addEventListener('scroll', handleScroll);
-  
-  
 
   var buttons = document.querySelectorAll('.buttonRegion');
   var slidebar = document.querySelector('.info-region');
