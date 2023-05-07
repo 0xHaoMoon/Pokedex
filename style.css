@@ -60,6 +60,7 @@ body{
     align-items: center;
     padding-left: 10px;
     justify-content: center;
+    text-align: center;
 }
 
 .buttonRegion {
@@ -91,17 +92,35 @@ body{
 }
 
 
-.info-region{
-    background-color: white;
-    font-family: 'pkm-font';
-    color: white;
+.info-region {
     display: flex;
-    align-items: center;
-    padding-left: 10px;
-    justify-content: center;
-    height: 12vh;
-    flex-wrap: wrap;
-}
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .info-region::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .info-region .buttonRegion {
+    margin-right: 10px;
+    cursor: pointer;
+    height: 20px;
+
+  }
+  
+  .slider {
+    display: flex;
+    white-space: nowrap;
+    height: 6vh;
+
+  }
+  
+  
+  
+  
 
 .info-Box-Header input {
     height: 2vh;

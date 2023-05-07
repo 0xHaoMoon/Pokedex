@@ -1,5 +1,5 @@
 function render() {
-    loadPokemon(1,85);
+    loadPokemon(1,27);
   }
   
 
@@ -49,56 +49,50 @@ async function getPokemonData(id) {
   }
 
 
-  async function loadAll() {
-    deleteBox();
-    await loadPokemon(1,24);
-  }
-  
-
   async function loadKanto() {
     deleteBox();
-    await loadPokemon(1,24);
+    await loadPokemon(1,27);
 
   }
   
   async function loadJohto() {
     deleteBox();
-    await loadPokemon(152, 174);
+    await loadPokemon(152, 178);
   }
   
   async function loadHoenn() {
     deleteBox();
-    await loadPokemon(252,(252+24));
+    await loadPokemon(252,(252+28));
   }
   
   async function loadSinnoh() {
     deleteBox();
-    await loadPokemon(387,(387+24));
+    await loadPokemon(387,(387+28));
   }
   
   async function loadEinall() {
     deleteBox();
-    await loadPokemon(495,(495+24));
+    await loadPokemon(495,(495+28));
   }
   
   async function loadKalos() {
     deleteBox();
-    await loadPokemon(650,674);
+    await loadPokemon(650,677);
   }
   
   async function loadAlola() {
     deleteBox();
-    await loadPokemon(722,(722+24));
+    await loadPokemon(722,(722+28));
   }
   
   async function loadGalar() {
     deleteBox();
-    await loadPokemon(810,(834));
+    await loadPokemon(810,(838));
   }
   
   async function loadPaldea() {
     deleteBox();
-    await loadPokemon(906,(906+24));
+    await loadPokemon(906,(906+28));
   }
 
   async function infoPkm(id) {
@@ -199,7 +193,6 @@ async function getPokemonData(id) {
   }
   
 
-  
   let loadingMore = false;
   
   async function handleScroll() {
@@ -217,7 +210,47 @@ async function getPokemonData(id) {
   
   
 
+  var buttons = document.querySelectorAll('.buttonRegion');
+  var slidebar = document.querySelector('.info-region');
+  var startX, currentX, scrollLeft;
   
-
-
+  slidebar.addEventListener('mousedown', function(e) {
+    startX = e.pageX - slidebar.offsetLeft;
+    scrollLeft = slidebar.scrollLeft;
+  });
+  
+  slidebar.addEventListener('mousemove', function(e) {
+    if (!startX) {
+      return;
+    }
+    e.preventDefault();
+    currentX = e.pageX - slidebar.offsetLeft;
+    const distance = (currentX - startX) * 1.5;
+    slidebar.scrollLeft = scrollLeft - distance;
+  });
+  
+  slidebar.addEventListener('mouseup', function(e) {
+    startX = null;
+  });
+  
+  slidebar.addEventListener('touchstart', function(e) {
+    startX = e.touches[0].clientX - slidebar.offsetLeft;
+    scrollLeft = slidebar.scrollLeft;
+  });
+  
+  slidebar.addEventListener('touchmove', function(e) {
+    if (!startX) {
+      return;
+    }
+    e.preventDefault();
+    currentX = e.touches[0].clientX - slidebar.offsetLeft;
+    const distance = (currentX - startX) * 1.5;
+    slidebar.scrollLeft = scrollLeft - distance;
+  });
+  
+  slidebar.addEventListener('touchend', function(e) {
+    startX = null;
+  });
+  
+  
   
