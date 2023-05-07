@@ -17,14 +17,27 @@ async function getPokemonData(id) {
   }
 
 
-  async function loadPokemon(startingID,endingID) {
-    const allPokemonElement = document.getElementById('all-Pokemon');
-    for (let i = startingID; i <= endingID; i++) {
+  async function loadPokemon(start, end) {
+    const loader = document.querySelector('.loader');
+    const progress = loader.querySelector('.progress');
+  
+    loader.style.display = 'block';
+    progress.style.width = '0%';
+  
+    for (let i = start; i <= end; i++) {
       const pokemonData = await getPokemonData(i);
       const pokemonHTML = generatePokemonHTML(pokemonData, i);
-      allPokemonElement.innerHTML += pokemonHTML;
+      document.getElementById('all-Pokemon').innerHTML += pokemonHTML;
+  
+      const percentage = ((i - start + 1) / (end - start + 1)) * 100;
+      progress.style.width = `${percentage}%`;
     }
+  
+    loader.style.display = 'none';
   }
+  
+  
+
   
 
   function generatePokemonHTML(pokemonData, id) {
@@ -53,20 +66,22 @@ async function getPokemonData(id) {
     if (region === 'Kanto') {
       await loadPokemon(1, 151);
     } else if (region === 'Johto') {
-      await loadPokemon(152, 178);
+      await loadPokemon(152, 251);
     } else if (region === 'Hoenn') {
-      await loadPokemon(179, 286);
+      await loadPokemon(252, 386);
     } else if (region === 'Sinnoh') {
-      await loadPokemon(387, 493);
-    } else if (region === 'Einall') {
-      await loadPokemon(494, 649);
+      await loadPokemon(387, 494);
+    } else if (region === 'Unova') {
+      await loadPokemon(495, 649);
     } else if (region === 'Kalos') {
       await loadPokemon(650, 721);
     } else if (region === 'Alola') {
       await loadPokemon(722, 809);
     } else if (region === 'Galar') {
-      await loadPokemon(810, 898);
-    }
+      await loadPokemon(810, 905);
+    }else if (region === 'Paldea') {
+    await loadPokemon(906, 1008);
+  }
   }
 
 
@@ -166,6 +181,7 @@ async function getPokemonData(id) {
       }
     }
   }
+
 
 
   var buttons = document.querySelectorAll('.buttonRegion');
