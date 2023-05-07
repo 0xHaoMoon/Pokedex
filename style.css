@@ -11,7 +11,7 @@ body{
 
 
 .info-Box{
-    height: 47vh;
+    height: 45vh;
 }
 
 .flex-column{
@@ -98,6 +98,7 @@ body{
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    align-items: center;
   }
   
   .info-region::-webkit-scrollbar {
@@ -114,7 +115,6 @@ body{
   .slider {
     display: flex;
     white-space: nowrap;
-    height: 6vh;
 
   }
   
@@ -143,10 +143,7 @@ body{
     display: flex;
 }
 
-.info-Box-Footer{
-    height: 8vh;
-    background-color: #EC3031;
-}
+
 
 .info-Box-Middle-Left{
     width: 40%;
@@ -279,19 +276,20 @@ body{
 
 .info-Box-Footer{
     width: 90vw;
-    height: 16vh;
+    height: 7vh;
     margin-left: 5vw;
     margin-right: 5vw;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    background-color: #EC3031;
 }
 
 .info-Text{
     background-color: white;
     width: 80vw;
-    height: 11.5vh;
+    height: 6vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -312,7 +310,7 @@ body{
 .all-Pokemon{
     display: flex;
     flex-wrap: wrap;
-    margin-top: 48vh;
+    margin-top: 46vh;
 }
 
 .single-Pokemon{
