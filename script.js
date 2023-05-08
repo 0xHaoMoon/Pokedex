@@ -18,26 +18,25 @@ async function getPokemonData(id) {
 
 
   async function loadPokemon(start, end) {
+    const allPokemon = document.getElementById('all-Pokemon');
+    allPokemon.style.display = 'none';
+    
+
     const loader = document.querySelector('.loader');
-    const progress = loader.querySelector('.progress');
-  
-    loader.style.display = 'block';
-    progress.style.width = '0%';
+    loader.style.display = 'flex';
+
   
     for (let i = start; i <= end; i++) {
       const pokemonData = await getPokemonData(i);
       const pokemonHTML = generatePokemonHTML(pokemonData, i);
       document.getElementById('all-Pokemon').innerHTML += pokemonHTML;
-  
-      const percentage = ((i - start + 1) / (end - start + 1)) * 100;
-      progress.style.width = `${percentage}%`;
     }
   
     loader.style.display = 'none';
+    allPokemon.style.display = 'flex';
   }
   
   
-
   
 
   function generatePokemonHTML(pokemonData, id) {
