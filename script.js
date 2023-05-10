@@ -20,9 +20,11 @@ async function getPokemonData(id) {
   async function loadPokemon(start, end) {
     const allPokemon = document.getElementById('all-Pokemon');
     allPokemon.style.display = 'none';
-  
+
     const loader = document.querySelector('.loader');
     loader.style.display = 'flex';
+
+    document.body.style.overflow = 'hidden';
   
     const loadingPercent = document.getElementById('loading-percent');
     const incrementPercent = 100 / (end - start + 1);
@@ -39,21 +41,22 @@ async function getPokemonData(id) {
   
     loader.style.display = 'none';
     allPokemon.style.display = 'flex';
+    document.body.style.overflow = '';
   }
   
   
-  
-  
-
   function generatePokemonHTML(pokemonData, id) {
     const pkmSprites = pokemonData.sprites.front_default;
     const pkmNames = pokemonData.forms[0].name;
     return `
+
       <div class="single-Pokemon flex-center flex-column" id="single-Pokemon${id}" onclick="infoPkm(${id})">
         <img src="${pkmSprites}" alt="">
-        <div class="flex-around">
+        <div class="flex-center">
+        <span class="number-span">#${id}</span>
+      </div>
+        <div class="flex-center">
           <span>${pkmNames}</span>
-          <span class="margin-Left10">#${id}</span>
         </div>
       </div>
     `;
@@ -188,7 +191,6 @@ async function getPokemonData(id) {
   }
 
 
-
   var buttons = document.querySelectorAll('.buttonRegion');
   var slidebar = document.querySelector('.info-region');
   var startX, currentX, scrollLeft;
@@ -230,6 +232,3 @@ async function getPokemonData(id) {
   slidebar.addEventListener('touchend', function(e) {
     startX = null;
   });
-  
-  
-  

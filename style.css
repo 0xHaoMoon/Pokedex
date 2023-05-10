@@ -303,6 +303,12 @@ body{
 
 }
 
+.number-span{
+    margin-bottom: 175px;
+    position: absolute;
+    margin-right: 70px;
+}
+
 .text-center{
     text-align: center;
 }
@@ -315,10 +321,11 @@ body{
 
 .single-Pokemon{
     background: white;
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 120px;
     border-radius: 5px;
     margin: 5px;
+    max-width: 100%;
 }
 
 .single-Pokemon:hover img {
@@ -363,7 +370,7 @@ body{
     height: 100vh;
     background-color: rgba(255, 255, 255, 0.8);
     z-index: 100001;
-    margin-top: 20vh;
+    position: fixed;
 }
   
 .pokeball {
