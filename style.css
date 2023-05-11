@@ -179,10 +179,11 @@ body{
 }
 
 .info-Type{
-    height: 3vh;
-    width: 16vw;
+    height: 20px;
+    width: 60px;
     color: white;
     margin-top: 10px;
+    margin-left: 4px;
 }
 
 
@@ -409,62 +410,38 @@ body{
   
   
     
-@media only screen and (min-width: 460px) {
-    .info-Box {
-        height: 50vh;
+@media only screen and (min-width: 1000px) {
+    .big-screen{
+        display: flex;
+    }
+
+    .header-box {
+        position: sticky;
+        width: 40vw;
+        height: 100vh;
+    }
+    
+    .info-Box-Footer {
+        width: 30vw;
     }
 
     .all-Pokemon {
-        margin-top: 50vh;
+        margin-top: 0;
     }
 
-    .info-Text {
-        height: 12.5vh;
-  }
+    .info-Box {
+        height: 100vh;
+    }
+    
+    .info-Box-Middle {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
 
-  .info-Box-Middle {
-    height: 30vh;
-    display: flex;
-    margin-left: 10vw;
-    margin-right: 10vw;
-}
-
-.info-Type {
-    width: 78px;
-}
-
-.info-Weight-Top {
-    width: 219px;
-}
-
-.info-Weight-Bottom {
-    width: 219px;
-}
-
-.info-Box-Middle-Left {
-    width: 50%;
-}
-
-.margin-left-right {
-    margin-left: 0;
-    margin-right: 0;
-    width: 50%;
-}
-
-.single-Pokemon {
-    width: 200px;
-    height: 200px;
-}
-
-.single-Pokemon img {
-    width: 200px;
-    height: 200px;
-}
-
-.single-Pokemon span {
-    font-size: 15px;
-    margin-top: -23px;
-}
-
+    .margin-left-right {
+        margin-left: 8vw;
+        margin-right: 5vw;
+    }
 }
 
