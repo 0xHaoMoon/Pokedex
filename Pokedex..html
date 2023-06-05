@@ -11,15 +11,15 @@
     <script src="script.js"></script>
 </head>
 
-<body onload="render()">
-<div class="big-screen">
+<!-- <body onload="render()"> -->
+<!--<div class="big-screen">
     <div class="loader flex-column">
         <div class="pokeball"></div>
         <div class="loading-progress">
           <span>Loading: </span>
           <span id="loading-percent">0%</span>
         </div>
-      </div>
+      </div>-->
 
 
 
@@ -90,7 +90,7 @@
             </div>
         </div>
 
-        <div class="stats-Box pkm-font margin-Top10">
+        <div id="stats-box" class="stats-Box pkm-font margin-Top10">
             <div>
               <h3>Statistics</h3>
               <div>
@@ -147,6 +147,8 @@
 
             
           </div>
+
+          <div onclick="slideout()"><img src="/png/up.png"></div>
           
 
         <div class="info-Box-Header margin-Top10">

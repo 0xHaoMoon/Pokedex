@@ -11,9 +11,12 @@ body{
 .width40{
     width: 40%;
 }
+
+/*
 .info-Box{
     height: 100vh;
 }
+*/
 
 .flex-column{
     display: flex;
@@ -144,7 +147,7 @@ body{
 
 
 .info-Box-Middle{
-    height: 24vh;
+    height: 31vh;
     display: flex;
 }
 
@@ -270,7 +273,7 @@ body{
 
 .info-Box-Footer{
     width: 90vw;
-    height: 11vh;
+    height: 9vh;
     margin-left: 5vw;
     margin-right: 5vw;
     display: flex;
@@ -282,7 +285,7 @@ body{
 
 .info-Text{
     background-color: white;
-    width: 80vw;
+    width: 87vw;
     height: 8vh;
     display: flex;
     justify-content: center;
@@ -401,11 +404,20 @@ body{
     }
   }
   
-  .stats-Box{
-    height: 48vh;
+  .stats-Box {
+    height: 0;
     margin-left: 5vw;
     margin-right: 5vw;
+    overflow: hidden;
+    transition: height 0.5s;
+    display: none;
   }
+  
+  .stats-Box.hidden {
+    height: 49vh;
+    display: block;
+  }
+  
   
   .bar {
     width: 100%;
@@ -423,7 +435,7 @@ body{
   }
   
     
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 550px) {
     .big-screen{
         display: flex;
     }
