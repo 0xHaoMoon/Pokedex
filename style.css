@@ -12,7 +12,7 @@ body{
     width: 40%;
 }
 .info-Box{
-    height: 45vh;
+    height: 100vh;
 }
 
 .flex-column{
@@ -38,6 +38,10 @@ body{
 
 .gap5{
     gap: 5px;
+}
+
+.gap10{
+    gap: 10px;
 }
 
 
@@ -248,11 +252,6 @@ body{
 
 .info-Weight-Top{
     margin-top: 20px;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-    border-top: 1px solid #000000;
-    border-left: 1px solid #000000;
-    border-right: 1px solid #000000;
     height: 2vh;
     width: 215px;
 }
@@ -260,14 +259,8 @@ body{
 
 .info-Weight-Bottom{
     border-top: 5px solid #bebebe;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom: 1px solid #000000;
-    border-left: 1px solid #000000;
-    border-right: 1px solid #000000;
     height: 2vh;
     width: 215px;
-
 }
 
 .info-Weight-Bottom span,
@@ -408,6 +401,26 @@ body{
     }
   }
   
+  .stats-Box{
+    height: 48vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+  
+  .bar {
+    width: 100%;
+    height: 10px;
+    background-color: #bebebe;
+    overflow: hidden;
+  }
+  
+  .fill {
+    height: 100%;
+    background-color: #8c8c8c;
+    display: flex;
+    align-items: center;
+
+  }
   
     
 @media only screen and (min-width: 1000px) {

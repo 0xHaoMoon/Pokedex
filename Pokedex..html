@@ -12,7 +12,7 @@
 </head>
 
 <body onload="render()">
-    <div class="big-screen">
+<div class="big-screen">
     <div class="loader flex-column">
         <div class="pokeball"></div>
         <div class="loading-progress">
@@ -20,32 +20,32 @@
           <span id="loading-percent">0%</span>
         </div>
       </div>
-      
-    
 
-    <div class="header-box">
+
+
+<div class="header-box">
     <div class="info-Box flex-column" id="info-Box">
         <div class="info-Box-Header">
             <span>info</span>
         </div>
-        
-        
+
+
         <div class="info-Box-Middle " id="info-Box-Middle">
             <div class="flex-column width40">
-            <div class="info-Box-Middle-Left " id="pkm-img-big">
-            </div>
-            <div class="flex-center">
-                <div class="flex">
-                    <div class="flex  " id="type">
+                <div class="info-Box-Middle-Left " id="pkm-img-big">
+                </div>
+                <div class="flex-center">
+                    <div class="flex">
+                        <div class="flex  " id="type">
+
+                        </div>
+                        <div class="flex  " id="type2">
+
+                        </div>
 
                     </div>
-                    <div class="flex  " id="type2">
-
-                    </div>
-
                 </div>
             </div>
-        </div>
             <div class="info-Box-Middle-Right margin-left-right">
                 <div class="info-Name">
                     <div class="info-Name-Top flex">
@@ -62,21 +62,92 @@
 
 
                 <div class="margin-Top10 ">
-                    <div class="info-Weight-Top flex-around"> <span class="pkm-font">HT</span> <span
-                            class="pkm-font " id="HT">???</span> </div>
-                    <div class="info-Weight-Bottom flex-around"> <span class="pkm-font">WT</span> <span
-                            class="pkm-font" id="WT">???</span> </div>
+                    <div class="info-Weight-Top flex-around"> <span class="pkm-font">HT</span> 
+                        <span class="pkm-font "id="HT"><b>???</b>cm</span> </div>
+                    <div class="info-Weight-Bottom flex-around"> <span class="pkm-font">WT</span> 
+                        <span class="pkm-font"id="WT"><b>???</b>kg</span> </div>
                 </div>
+
+                <div class="margin-Top10 ">
+                    <div class="info-Weight-Top flex-around"> <span class="pkm-font">Species</span> 
+                        <span class="pkm-font " id="HT"><b>Dragon</b></span> </div>
+                </div>
+
+                <div class="margin-Top10 ">
+                    <div class="info-Weight-Top flex-around"> <span class="pkm-font">Abilites</span></div>
+                    <div class="info-Weight-Bottom flex-around"> <span class="pkm-font"><b>Speed,Agility</b> </span></div>
+                </div>
+
+
 
             </div>
         </div>
 
 
         <div class="info-Box-Footer margin-Top10">
-            <div class="info-Text" >
-                <span class="pkm-font text-center" id="info-Text" > ??? </span>
+            <div class="info-Text">
+                <span class="pkm-font text-center" id="info-Text"> ??? </span>
             </div>
         </div>
+
+        <div class="stats-Box pkm-font margin-Top10">
+            <div>
+              <h3>Statistics</h3>
+              <div>
+                <div>
+                  <span>Attack</span>
+                  <div class="bar">
+                    <div class="fill" style="width: 68%;"><span>136</span></div>
+                  </div>
+                </div>
+                <div class="flex-column gap10">
+                    <span>Attack</span>
+                    <div class="bar">
+                      <div class="fill" style="width: 68%;"><span>136</span></div>
+                    </div>
+                  </div>
+                  <div>
+                    <span>Attack</span>
+                    <div class="bar">
+                      <div class="fill" style="width: 68%;"><span>136</span></div>
+                    </div>
+                  </div>
+                  <div>
+                    <span>Attack</span>
+                    <div class="bar">
+                      <div class="fill" style="width: 68%;"><span>136</span></div>
+                    </div>
+                  </div>
+                  <div>
+                    <span>Attack</span>
+                    <div class="bar">
+                      <div class="fill" style="width: 68%;"><span>136</span></div>
+                    </div>
+                  </div>
+                  <div>
+                    <span>Attack</span>
+                    <div class="bar">
+                      <div class="fill" style="width: 68%;"><span>136</span></div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <div>
+            <h3>Weakness</h3>
+            </div>
+
+            <div>
+            <h3>Evolution Chain</h3>
+            </div>
+
+            <div>
+                <h3>Forms</h3>
+            </div>
+
+            
+          </div>
+          
 
         <div class="info-Box-Header margin-Top10">
             <input class="info-Box-Header" type="text" placeholder="search" onkeyup="searchPokemon()">
@@ -95,17 +166,17 @@
                 <button class="buttonRegion" onclick="loadRegion('Galar')">galar</button>
                 <button class="buttonRegion" onclick="loadRegion('Paldea')">paldea</button>
             </div>
-          </div>
-          
-          
-
-        </div>
-    </div>
-
-        <div  class="all-Pokemon flex-center" id="all-Pokemon">
         </div>
 
+
+
     </div>
+</div>
+
+<div class="all-Pokemon flex-center" id="all-Pokemon">
+</div>
+
+</div>
 
 
 </body>
