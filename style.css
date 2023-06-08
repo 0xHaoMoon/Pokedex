@@ -147,7 +147,7 @@ body{
 
 
 .info-Box-Middle{
-    height: 31vh;
+    height: 25vh;
     display: flex;
 }
 
@@ -459,7 +459,6 @@ body{
     }
     
     .info-Box-Middle {
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     }
@@ -467,6 +466,10 @@ body{
     .margin-left-right {
         margin-left: 8vw;
         margin-right: 5vw;
+    }
+
+    .info-Box-Middle-Left {
+        height: 19vh;
     }
 }
 

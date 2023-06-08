@@ -11,9 +11,15 @@ async function getPokemonData(id) {
 
 
 async function getPokemonSpecies(id) {
-  const response = await fetch(`  https://pokeapi.co/api/v2/pokemon-species/${id}/`);
+  const response = await fetch(`  https://pokeapi.co/api/v2/pokemon-species/${id}`);
   const pokemonSpecies = await response.json();
   return pokemonSpecies;
+}
+
+async function getPokemonWeakness(id) {
+  const response = await fetch(`https://pokeapi.co/api/v2/type/${id}/`);
+  const pokemonWeakness = await response.json();
+  return pokemonWeakness;
 }
 
 
@@ -100,6 +106,8 @@ async function infoPkm(id) {
   loadTypes(id);
   loadHT(id);
   loadWT(id);
+  loadStats(id);
+  loadAbilitys(id);
 }
 
 
@@ -124,32 +132,31 @@ async function loadSpecies(id){
   document.getElementById('info-Text').innerHTML = `${pkmSpecies}`;
 }
 
+const typeColors = {
+  normal: "#A8A878",
+  fire: "#F08030",
+  water: "#6890F0",
+  electric: "#F8D030",
+  grass: "#78C850",
+  ice: "#98D8D8",
+  fighting: "#C03028",
+  poison: "#A040A0",
+  ground: "#E0C068",
+  flying: "#A890F0",
+  psychic: "#F85888",
+  bug: "#A8B820",
+  rock: "#B8A038",
+  ghost: "#705898",
+  dragon: "#7038F8",
+  dark: "#705848",
+  steel: "#B8B8D0",
+  fairy: "#EE99AC"
+};
 
 async function loadTypes(id) {
   const pokemonData = await getPokemonData(id);
   const pkmType1 = pokemonData.types[0].type.name;
   const pkmType2 = pokemonData.types[1] ? pokemonData.types[1].type.name : null;
-
-  const typeColors = {
-    normal: "#A8A878",
-    fire: "#F08030",
-    water: "#6890F0",
-    electric: "#F8D030",
-    grass: "#78C850",
-    ice: "#98D8D8",
-    fighting: "#C03028",
-    poison: "#A040A0",
-    ground: "#E0C068",
-    flying: "#A890F0",
-    psychic: "#F85888",
-    bug: "#A8B820",
-    rock: "#B8A038",
-    ghost: "#705898",
-    dragon: "#7038F8",
-    dark: "#705848",
-    steel: "#B8B8D0",
-    fairy: "#EE99AC"
-  };
 
   if (pokemonData.types.length > 0) {
     document.getElementById('type').innerHTML = `<div class="info-Type flex type-Name flex-center" style="background-color: ${typeColors[pkmType1]}">${pkmType1}</div>`;
@@ -161,6 +168,10 @@ async function loadTypes(id) {
   }
 }
 
+async function loadWeakness(id) {
+  const weakness = await getPokemonWeakness(id);
+  console.log(weakness);
+}
 
 async function loadWT(id){
   const pokemonData = await getPokemonData(id);
@@ -175,8 +186,53 @@ async function loadHT(id){
   document.getElementById('HT').innerHTML = `${HT}`;
 }
 
+async function loadStats(id){
+  for (let i = 0; i < 6; i++) {
+    let pokemonData = await getPokemonData(id);
+    const stats = pokemonData.stats[i].base_stat;
+    const currentStats = document.getElementById(`stats-${i}`)
+    currentStats.innerHTML = stats;
+    valueID = id;
+    adjustFillWidth(stats,i);
+  }
+}
+
+function adjustFillWidth(value,i) {
+  let fillElement = document.getElementById(`fill-${i}`);
+  let width = Math.min(value, 170); // Maximalwert von 200
+  maxWidth = document.querySelector(".bar").offsetWidth;
+    fillElement.style.width = (width / 170) * maxWidth + "px";
+}
+
+
+let valueID;
+
+function slideout() {
+  var statsBox = document.getElementById('stats-box');
+  statsBox.classList.toggle('hidden');
+  loadStats(valueID);
+}
+
+async function loadAbilitys(id){
+  const pokemonData = await getPokemonData(id);
+  if (pokemonData.abilities.length>1) {
+    for (let i = 0; i < 2; i++) {
+      const abilitys = pokemonData.abilities[i].ability.name;
+      const ability = document.getElementById(`ability-${i}`)
+      ability.innerHTML = abilitys 
+    }
+  } else {
+    const abilitys = pokemonData.abilities[0].ability.name;
+    const ability = document.getElementById(`ability-${0}`)
+  }
+
+}
+
+
+
 
 function searchPokemon() {
+
   const input = document.querySelector('input[type="text"]');
   const filter = input.value.toUpperCase();
   const pokemonDivs = document.querySelectorAll('.single-Pokemon');
@@ -190,7 +246,6 @@ function searchPokemon() {
   }
 }
 
-/*
 var buttons = document.querySelectorAll('.buttonRegion');
 var slidebar = document.querySelector('.info-region');
 var startX, currentX, scrollLeft;
@@ -232,9 +287,4 @@ slidebar.addEventListener('touchmove', function(e) {
 slidebar.addEventListener('touchend', function(e) {
   startX = null;
 });
-*/
 
-function slideout() {
-  var statsBox = document.getElementById('stats-box');
-  statsBox.classList.toggle('hidden');
-}

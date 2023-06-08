@@ -11,15 +11,15 @@
     <script src="script.js"></script>
 </head>
 
-<!-- <body onload="render()"> -->
-<!--<div class="big-screen">
+<body onload="render()">
+<div class="big-screen">
     <div class="loader flex-column">
         <div class="pokeball"></div>
         <div class="loading-progress">
           <span>Loading: </span>
           <span id="loading-percent">0%</span>
         </div>
-      </div>-->
+      </div>
 
 
 
@@ -62,22 +62,16 @@
 
 
                 <div class="margin-Top10 ">
-                    <div class="info-Weight-Top flex-around"> <span class="pkm-font">HT</span> 
-                        <span class="pkm-font "id="HT"><b>???</b>cm</span> </div>
-                    <div class="info-Weight-Bottom flex-around"> <span class="pkm-font">WT</span> 
-                        <span class="pkm-font"id="WT"><b>???</b>kg</span> </div>
+                    <div class="info-Weight-Top flex-around"> <span class="pkm-font">ht</span> 
+                        <span class="pkm-font "><b id="HT">???</b>cm</span> </div>
+                    <div class="info-Weight-Bottom flex-around"> <span class="pkm-font">wt</span> 
+                        <span class="pkm-font"><b id="WT">???</b>kg</span> </div>
                 </div>
 
                 <div class="margin-Top10 ">
-                    <div class="info-Weight-Top flex-around"> <span class="pkm-font">Species</span> 
-                        <span class="pkm-font " id="HT"><b>Dragon</b></span> </div>
+                    <div class="info-Weight-Top flex-around"> <span class="pkm-font">abilites</span></div>
+                    <div class="info-Weight-Bottom flex-around"> <span class="pkm-font"><b id="ability-0"></b> <b id="ability-1"></b></span></div>
                 </div>
-
-                <div class="margin-Top10 ">
-                    <div class="info-Weight-Top flex-around"> <span class="pkm-font">Abilites</span></div>
-                    <div class="info-Weight-Bottom flex-around"> <span class="pkm-font"><b>Speed,Agility</b> </span></div>
-                </div>
-
 
 
             </div>
@@ -92,56 +86,56 @@
 
         <div id="stats-box" class="stats-Box pkm-font margin-Top10">
             <div>
-              <h3>Statistics</h3>
-              <div>
+              <h3>statistics</h3>
+              <div class="flex-column gap10">
                 <div>
-                  <span>Attack</span>
+                  <span>hp</span>
                   <div class="bar">
-                    <div class="fill" style="width: 68%;"><span>136</span></div>
+                    <div class="fill" id="fill-0" style="width: 100%;"><span id="stats-0" ></span></div>
                   </div>
                 </div>
-                <div class="flex-column gap10">
-                    <span>Attack</span>
+                <div >
+                    <span>attack</span>
                     <div class="bar">
-                      <div class="fill" style="width: 68%;"><span>136</span></div>
+                      <div class="fill" id="fill-1" style="width: 100%;"><span id="stats-1"></span></div>
                     </div>
                   </div>
                   <div>
-                    <span>Attack</span>
+                    <span>defense</span>
                     <div class="bar">
-                      <div class="fill" style="width: 68%;"><span>136</span></div>
+                      <div class="fill" id="fill-2" style="width: 100%;"><span id="stats-2"></span></div>
                     </div>
                   </div>
                   <div>
-                    <span>Attack</span>
+                    <span>special-attack</span>
                     <div class="bar">
-                      <div class="fill" style="width: 68%;"><span>136</span></div>
+                      <div class="fill" id="fill-3" style="width: 100%;"><span id="stats-3"></span></div>
                     </div>
                   </div>
                   <div>
-                    <span>Attack</span>
+                    <span>special-defense</span>
                     <div class="bar">
-                      <div class="fill" style="width: 68%;"><span>136</span></div>
+                      <div class="fill" id="fill-4" style="width: 100%;"><span id="stats-4"></span></div>
                     </div>
                   </div>
                   <div>
-                    <span>Attack</span>
+                    <span>speed</span>
                     <div class="bar">
-                      <div class="fill" style="width: 68%;"><span>136</span></div>
+                      <div class="fill" id="fill-5" style="width: 100%;"><span id="stats-5" ></span></div>
                     </div>
                   </div>
               </div>
             </div>
 
-            <div>
+            <div class="margin-Top10">
             <h3>Weakness</h3>
             </div>
 
-            <div>
+            <div class="margin-Top10">
             <h3>Evolution Chain</h3>
             </div>
 
-            <div>
+            <div class="margin-Top10">
                 <h3>Forms</h3>
             </div>
 
