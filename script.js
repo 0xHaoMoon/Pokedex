@@ -4,52 +4,40 @@ function render() {
 
 
 async function getPokemonData(id) {
-  let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-  let pokemonData = await response.json();
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+  const pokemonData = await response.json();
   return pokemonData;
 }
 
 
 async function getPokemonSpecies(id) {
-  let response = await fetch(`  https://pokeapi.co/api/v2/pokemon-species/${id}`);
-  let pokemonSpecies = await response.json();
+  const response = await fetch(`  https://pokeapi.co/api/v2/pokemon-species/${id}`);
+  const pokemonSpecies = await response.json();
   return pokemonSpecies;
 }
 
 async function getPokemonWeakness(id) {
-  let response = await fetch(`https://pokeapi.co/api/v2/type/${id}`);
-  let pokemonWeakness = await response.json();
+  const response = await fetch(`https://pokeapi.co/api/v2/type/${id}`);
+  const pokemonWeakness = await response.json();
   return pokemonWeakness;
 }
 
 async function getPokemonEvolutionChain(id) {
-  let response = await fetch(`https://pokeapi.co/api/v2/evolution-chain/${id}`);
-  let pokemonEC = await response.json();
+  const response = await fetch(`https://pokeapi.co/api/v2/evolution-chain/${id}`);
+  const pokemonEC = await response.json();
   return pokemonEC;
 }
 
-async function getPokemonWeakness(id) {
-  try {
-    const response = await fetch(`https://pokeapi.co/api/v2/type/${id}`);
-    const pokemonWeakness = await response.json();
-    return pokemonWeakness;
-  } catch (error) {
-    console.log("Fehler beim Abrufen der Schwächen:", error);
-    throw error; // Werfen Sie den Fehler erneut, um ihn an die aufrufende Funktion weiterzugeben
-  }
+async function  loadEC(id) {
+  const pokemonData = await getPokemonEvolutionChain(id);
+  const PokemonEC = pokemonData.evolves_to.length;
+  console.log(PokemonEC);
 }
 
-async function getPokemonEvolutionChain(id) {
-  try {
-    const response = await fetch(`https://pokeapi.co/api/v2/evolution-chain/${id}`);
-    const pokemonEC = await response.json();
-    return pokemonEC;
-  } catch (error) {
-    console.log("Fehler beim Abrufen der Evolution-Kette:", error);
-    throw error; // Werfen Sie den Fehler erneut, um ihn an die aufrufende Funktion weiterzugeben
-  }
+async function loadWeakness(id) {
+  const weakness = await getPokemonWeakness(id);
+  console.log(weakness);
 }
-
 
 async function loadWT(id){
   const pokemonData = await getPokemonData(id);
