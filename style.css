@@ -50,7 +50,7 @@ body{
 
 
 .margin-Top10{
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .margin-Left10{
@@ -276,7 +276,7 @@ body{
 }
 
 .info-Box-Footer{
-    width: 90vw;
+    width: 40vw;
     height: 9vh;
     margin-left: 5vw;
     margin-right: 5vw;
@@ -409,18 +409,11 @@ body{
   }
   
   .stats-Box {
-    height: 0;
-    margin-left: 5vw;
+    height: 25vh;
     margin-right: 5vw;
-    overflow: hidden;
-    transition: height 0.5s;
-    display: none;
+    width: 50%;
   }
   
-  .stats-Box.hidden {
-    height: 49vh;
-    display: block;
-  }
   
   
   .bar {
@@ -437,23 +430,71 @@ body{
     align-items: center;
 
   }
+
+  .none{
+    display: none;
+  }
+
+  .master-box{
+    display: flex;
+  }
+
+  .box-1{
+    width: 50%;
+    height: unset;
+    padding-top: unset;
+  }
+
+  .stats-box-center{
+    padding-top: 6vh;
+  }
   
     
-@media only screen and (min-width: 800px) {
+@media only screen and (max-width: 580px) {
+
+    .master-box{
+        display: unset;
+      }
 
     .stats-Box {
-        height: 49vh;
+        height: 0;
         margin-left: 5vw;
         margin-right: 5vw;
+        overflow: hidden;
+        transition: height 0.5s;
+        display: none;
+        width: unset;
       }
       
       .stats-Box.hidden {
-        height: 49vh;
+        height: 38vh;
+        display: block;
+      }
+
+      .padding{
+        height: 40vh;
+        padding-top: 10vh;
+      }
+      
+      .none{
+        display: flex;
+      }
+
+      .box-1{
+        width: unset;
+      }
+
+      .info-Box-Footer{
+        width: 90vw;
+      }
+
+      .stats-box-center{
+        padding-top: 0vh;
       }
 
 
-    
-  
-
+      .all-Pokemon{
+        margin-top: 60vh;
+    }
 }
 

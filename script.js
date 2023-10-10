@@ -1,8 +1,4 @@
-function render() {
-  loadPokemon(1,10);
-}
-
-
+//Diese Funktion holt die Daten für ein einzelnes Pokémon von der PokéAPI.
 async function getPokemonData(id) {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
   const pokemonData = await response.json();
@@ -10,6 +6,7 @@ async function getPokemonData(id) {
 }
 
 
+//Diese Funktion holt die Artendaten für ein einzelnes Pokémon von der PokéAPI.
 async function getPokemonSpecies(id) {
   const response = await fetch(`  https://pokeapi.co/api/v2/pokemon-species/${id}`);
   const pokemonSpecies = await response.json();
@@ -17,13 +14,12 @@ async function getPokemonSpecies(id) {
 }
 
 
-async function loadWT(id){
-  const pokemonData = await getPokemonData(id);
-  const WT = pokemonData.height;
-  document.getElementById('WT').innerHTML = `${WT}`;
+//Diese Funktion rendert die Anfangsseite, indem die ersten 10 Pokémon geladen werden.
+function render() {
+  loadPokemon(1,10);
 }
 
-
+//Diese Funktion lädt die Pokémon-Daten für einen angegebenen Bereich von Pokémon-IDs.
 async function loadPokemon(start, end) {
   const allPokemon = document.getElementById('all-Pokemon');
   allPokemon.style.display = 'none';
@@ -52,6 +48,7 @@ async function loadPokemon(start, end) {
 }
 
 
+//Diese Funktion generiert das HTML für einen einzelnen Pokémon-Eintrag.
 function generatePokemonHTML(pokemonData, id) {
   const pkmSprites = pokemonData.sprites.front_default;
   const pkmNames = pokemonData.forms[0].name;
@@ -70,12 +67,7 @@ function generatePokemonHTML(pokemonData, id) {
 }
 
 
-function deleteBox() {
-  const allPokemonElement = document.getElementById('all-Pokemon');
-  allPokemonElement.innerHTML = '';
-}
-
-
+//Diese Funktion lädt die Pokémon-Daten für die angegebene Region.
 async function loadRegion(region){
   deleteBox();
   if (region === 'Kanto') {
@@ -100,6 +92,14 @@ async function loadRegion(region){
 }
 
 
+//Diese Funktion löscht den Inhalt des Elements all-Pokemon.
+function deleteBox() {
+  const allPokemonElement = document.getElementById('all-Pokemon');
+  allPokemonElement.innerHTML = '';
+}
+
+
+//Diese Funktion lädt die detaillierten Informationen für ein einzelnes Pokémon.
 async function infoPkm(id) {
   loadSprite(id)
   loadName(id)
@@ -112,6 +112,23 @@ async function infoPkm(id) {
 }
 
 
+//Diese Funktion lädt das Gewicht für ein einzelnes Pokémon von der PokéAPI.
+async function loadWT(id){
+  const pokemonData = await getPokemonData(id);
+  const WT = pokemonData.height;
+  document.getElementById('WT').innerHTML = `${WT}`;
+}
+
+
+//Diese Funktion lädt die Größe für ein einzelnes Pokémon von der PokéAPI.
+async function loadHT(id){
+  const pokemonData = await getPokemonData(id);
+  const HT = pokemonData.weight;
+  document.getElementById('HT').innerHTML = `${HT}`;
+}
+
+
+//Diese Funktion lädt den Namen für ein einzelnes Pokémon von der PokéAPI.
 async function loadName(id) {
   const pokemonData = await getPokemonData(id);
   const pkmNames = pokemonData.forms[0].name;
@@ -120,13 +137,14 @@ async function loadName(id) {
 }
 
 
+//Diese Funktion lädt das Sprite für ein einzelnes Pokémon von der PokéAPI.
 async function loadSprite(id) {
   const pokemonData = await getPokemonData(id);
   const pkmSprites = pokemonData.sprites.front_default;
   document.getElementById('pkm-img-big').style.backgroundImage = `url(${pkmSprites})`;
 }
 
-
+//Diese Funktion lädt die Artendaten für ein einzelnes Pokémon von der PokéAPI.
 async function loadSpecies(id){
   const getPokemonDataSpecies = await getPokemonSpecies(id);
   const pkmSpecies = getPokemonDataSpecies.flavor_text_entries[0].flavor_text;
@@ -154,6 +172,8 @@ const typeColors = {
   fairy: "#EE99AC"
 };
 
+
+//Diese Funktion lädt die Typen für ein einzelnes Pokémon von der PokéAPI.
 async function loadTypes(id) {
   const pokemonData = await getPokemonData(id);
   const pkmType1 = pokemonData.types[0].type.name;
@@ -170,16 +190,7 @@ async function loadTypes(id) {
 }
 
 
-
-
-
-
-async function loadHT(id){
-  const pokemonData = await getPokemonData(id);
-  const HT = pokemonData.weight;
-  document.getElementById('HT').innerHTML = `${HT}`;
-}
-
+//Diese Funktion lädt die Statistiken für ein einzelnes Pokémon von der PokéAPI.
 async function loadStats(id){
   for (let i = 0; i < 6; i++) {
     let pokemonData = await getPokemonData(id);
@@ -191,22 +202,8 @@ async function loadStats(id){
   }
 }
 
-function adjustFillWidth(value,i) {
-  let fillElement = document.getElementById(`fill-${i}`);
-  let width = Math.min(value, 170); // Maximalwert von 200
-  maxWidth = document.querySelector(".bar").offsetWidth;
-    fillElement.style.width = (width / 170) * maxWidth + "px";
-}
 
-
-let valueID;
-
-function slideout() {
-  var statsBox = document.getElementById('stats-box');
-  statsBox.classList.toggle('hidden');
-  loadStats(valueID);
-}
-
+//Diese Funktion lädt die Fähigkeiten für ein einzelnes Pokémon von der PokéAPI.
 async function loadAbilitys(id){
   const pokemonData = await getPokemonData(id);
   if (pokemonData.abilities.length>1) {
@@ -223,8 +220,27 @@ async function loadAbilitys(id){
 }
 
 
+//Diese Funktion passt die Breite des Füllelements für die angegebene Statistik an.
+function adjustFillWidth(value,i) {
+  let fillElement = document.getElementById(`fill-${i}`);
+  let width = Math.min(value, 170); // Maximalwert von 200
+  maxWidth = document.querySelector(".bar").offsetWidth;
+    fillElement.style.width = (width / 170) * maxWidth + "px";
+}
+
+//überbrücken mit loadStats(id)
+let valueID;
+//Diese Funktion öffnet oder schließt die Statistikbox
+function slideout() {
+  let statsBox = document.getElementById('stats-box');
+  let statsBoxpadding = document.getElementById('box1');
+  statsBox.classList.toggle('hidden');
+  statsBoxpadding.classList.toggle('padding');
+  loadStats(valueID);
+}
 
 
+//Diese Funktion filtert die Pokémon-Liste basierend auf der Sucheingabe.
 function searchPokemon() {
 
   const input = document.querySelector('input[type="text"]');
@@ -239,6 +255,8 @@ function searchPokemon() {
     }
   }
 }
+
+
 
 var buttons = document.querySelectorAll('.buttonRegion');
 var slidebar = document.querySelector('.info-region');
