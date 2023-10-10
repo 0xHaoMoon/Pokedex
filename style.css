@@ -214,6 +214,10 @@ body{
     width: 213px;
 }
 
+.arrow-size{
+    height: 50px;
+}
+
 .pokeball-png{
     display: flex;
     justify-content: center;
@@ -313,7 +317,7 @@ body{
 .all-Pokemon{
     display: flex;
     flex-wrap: wrap;
-    margin-top: 46vh;
+    margin-top: 52vh;
 }
 
 .single-Pokemon{
@@ -435,41 +439,21 @@ body{
   }
   
     
-@media only screen and (min-width: 550px) {
-    .big-screen{
-        display: flex;
-    }
+@media only screen and (min-width: 800px) {
 
-    .header-box {
-        position: sticky;
-        width: 40vw;
-        height: 100vh;
-    }
-    
-    .info-Box-Footer {
-        width: 30vw;
-    }
-
-    .all-Pokemon {
-        margin-top: 0;
-    }
-
-    .info-Box {
-        height: 100vh;
-    }
-    
-    .info-Box-Middle {
-    justify-content: center;
-    align-items: center;
-    }
-
-    .margin-left-right {
-        margin-left: 8vw;
+    .stats-Box {
+        height: 49vh;
+        margin-left: 5vw;
         margin-right: 5vw;
-    }
+      }
+      
+      .stats-Box.hidden {
+        height: 49vh;
+      }
 
-    .info-Box-Middle-Left {
-        height: 19vh;
-    }
+
+    
+  
+
 }
 

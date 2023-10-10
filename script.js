@@ -1,5 +1,5 @@
 function render() {
-  loadPokemon(1,151);
+  loadPokemon(1,10);
 }
 
 
@@ -16,34 +16,13 @@ async function getPokemonSpecies(id) {
   return pokemonSpecies;
 }
 
-async function getPokemonWeakness(id) {
-  const response = await fetch(`https://pokeapi.co/api/v2/type/${id}`);
-  const pokemonWeakness = await response.json();
-  return pokemonWeakness;
-}
-
-async function getPokemonEvolutionChain(id) {
-  const response = await fetch(`https://pokeapi.co/api/v2/evolution-chain/${id}`);
-  const pokemonEC = await response.json();
-  return pokemonEC;
-}
-
-async function  loadEC(id) {
-  const pokemonData = await getPokemonEvolutionChain(id);
-  const PokemonEC = pokemonData.evolves_to.length;
-  console.log(PokemonEC);
-}
-
-async function loadWeakness(id) {
-  const weakness = await getPokemonWeakness(id);
-  console.log(weakness);
-}
 
 async function loadWT(id){
   const pokemonData = await getPokemonData(id);
   const WT = pokemonData.height;
   document.getElementById('WT').innerHTML = `${WT}`;
 }
+
 
 async function loadPokemon(start, end) {
   const allPokemon = document.getElementById('all-Pokemon');
