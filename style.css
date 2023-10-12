@@ -50,7 +50,7 @@ body{
 
 
 .margin-Top10{
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .margin-Left10{
@@ -107,8 +107,13 @@ body{
     scrollbar-width: none;
     -ms-overflow-style: none;
     align-items: center;
+    justify-content: center;
   }
   
+  .rotate{
+    transform: rotate(180deg);
+    transition: height 0.5s ease-in-out;
+  }
   .info-region::-webkit-scrollbar {
     display: none;
   }
@@ -409,7 +414,7 @@ body{
   }
   
   .stats-Box {
-    height: 25vh;
+    height: 20vh;
     margin-right: 5vw;
     width: 50%;
   }
@@ -450,7 +455,7 @@ body{
   }
   
     
-@media only screen and (max-width: 580px) {
+@media only screen and (max-width: 600px) {
 
     .master-box{
         display: unset;
@@ -461,13 +466,13 @@ body{
         margin-left: 5vw;
         margin-right: 5vw;
         overflow: hidden;
-        transition: height 0.5s;
+        transition: height 0.5s ease-in-out;
         display: none;
         width: unset;
       }
       
       .stats-Box.hidden {
-        height: 38vh;
+        height: 30vh;
         display: block;
       }
 
@@ -478,6 +483,7 @@ body{
       
       .none{
         display: flex;
+        height: 13vh;
       }
 
       .box-1{
@@ -494,7 +500,36 @@ body{
 
 
       .all-Pokemon{
-        margin-top: 60vh;
+        margin-top: 67vh;
+    }
+
+    .info-region{
+      justify-content: start;
     }
 }
 
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  .info-Box-Middle {
+    height: 17vh;
+}
+
+.all-Pokemon {
+  margin-top: 40vh;
+}
+
+}
+
+
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(255,255,255,.15);
+}
+
+::-webkit-scrollbar-thumb {
+border: 3px solid transparent;
+ background-clip: content-box;
+  background-color: #EC3031;
+}

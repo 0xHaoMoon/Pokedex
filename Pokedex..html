@@ -89,40 +89,41 @@
         
 
         <div id="stats-box" class="stats-Box pkm-font margin-Top10">
+  
             <div class="stats-box-center">
               <div class="flex-column gap10">
                 <div>
-                  <span>hp</span>
+                  <span class="pkm-font ">hp</span>
                   <div class="bar">
                     <div class="fill" id="fill-0" style="width: 100%;"><span id="stats-0" ></span></div>
                   </div>
                 </div>
                 <div >
-                    <span>attack</span>
+                    <span class="pkm-font ">attack</span>
                     <div class="bar">
                       <div class="fill" id="fill-1" style="width: 100%;"><span id="stats-1"></span></div>
                     </div>
                   </div>
                   <div>
-                    <span>defense</span>
+                    <span class="pkm-font ">defense</span>
                     <div class="bar">
                       <div class="fill" id="fill-2" style="width: 100%;"><span id="stats-2"></span></div>
                     </div>
                   </div>
                   <div>
-                    <span>special-attack</span>
+                    <span class="pkm-font ">special-attack</span>
                     <div class="bar">
                       <div class="fill" id="fill-3" style="width: 100%;"><span id="stats-3"></span></div>
                     </div>
                   </div>
                   <div>
-                    <span>special-defense</span>
+                    <span class="pkm-font ">special-defense</span>
                     <div class="bar">
                       <div class="fill" id="fill-4" style="width: 100%;"><span id="stats-4"></span></div>
                     </div>
                   </div>
                   <div>
-                    <span>speed</span>
+                    <span class="pkm-font ">speed</span>
                     <div class="bar">
                       <div class="fill" id="fill-5" style="width: 100%;"><span id="stats-5" ></span></div>
                     </div>
@@ -132,8 +133,11 @@
           </div>
         </div>
 
-          <div class="flex-center none" onclick="slideout()">
-            <img class="arrow-size" src="/png/arrowDown.svg" alt="" srcset="">
+          <div class="flex-around none" >
+
+            <img onclick="loadLastPkm()"class="arrow-size" src="./png/arrowLeft.svg" alt="" srcset="">
+            <img  onclick="slideout()" class="arrow-size" id="arrowDown" src="./png/arrowDown.svg" alt="" srcset="">
+            <img onclick="loadNextPkm()"class="arrow-size" src="./png/arrowRifght.svg" alt="" srcset="">
           </div>
           
 
@@ -163,6 +167,11 @@
 
 <div class="all-Pokemon flex-center" id="all-Pokemon">
 </div>
+<div class="flex-center flex-column">
+  <p class="pkm-font ">show more<p>
+  <img onclick="loadMorePkm()" class="arrow-size" id="arrowDown" src="./png/arrowDown.svg" alt="" srcset="">
+</div>
+
 
 </div>
 
