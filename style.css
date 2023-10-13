@@ -3,6 +3,9 @@
     src: url(./fonts/PokemonGb-RAeo.ttf) format('truetype');
   }
   
+.margin0{
+  margin: 0;
+}
 
 body{
     margin: 0;
@@ -112,7 +115,7 @@ body{
   
   .rotate{
     transform: rotate(180deg);
-    transition: height 0.5s ease-in-out;
+    transition: height 1s ease-in-out;
   }
   .info-region::-webkit-scrollbar {
     display: none;
@@ -221,6 +224,7 @@ body{
 
 .arrow-size{
     height: 50px;
+    cursor: pointer;
 }
 
 .pokeball-png{
@@ -466,7 +470,7 @@ body{
         margin-left: 5vw;
         margin-right: 5vw;
         overflow: hidden;
-        transition: height 0.5s ease-in-out;
+
         display: none;
         width: unset;
       }
@@ -475,6 +479,8 @@ body{
         height: 30vh;
         display: block;
       }
+
+      
 
       .padding{
         height: 40vh;

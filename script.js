@@ -71,7 +71,7 @@ function generatePokemonHTML(pokemonData, id) {
       <span class="number-span">#${id}</span>
     </div>
       <div class="flex-center">
-        <span>${pkmNames}</span>
+        <span class="pkmName">${pkmNames}</span>
       </div>
     </div>
   `;
@@ -269,13 +269,13 @@ function slideout() {
 
 //Diese Funktion filtert die Pokémon-Liste basierend auf der Sucheingabe.
 function searchPokemon() {
-
   const input = document.querySelector('input[type="text"]');
-  const filter = input.value.toUpperCase();
-  const pokemonDivs = document.querySelectorAll('.single-Pokemon');
+  const filter = input.value;
+  const pokemonDivs = document.querySelectorAll('.single-pokemon');
+
   for (let i = 0; i < pokemonDivs.length; i++) {
-    const name = pokemonDivs[i].querySelector('.flex-around span:first-child').innerHTML.toUpperCase();
-    if (name.indexOf(filter) > -1) {
+    const name = pokemonDivs[i].querySelector('.pkm-name').innerHTML;
+    if (name.includes(filter)) {
       pokemonDivs[i].style.display = '';
     } else {
       pokemonDivs[i].style.display = 'none';
@@ -284,46 +284,4 @@ function searchPokemon() {
 }
 
 
-
-var buttons = document.querySelectorAll('.buttonRegion');
-var slidebar = document.querySelector('.info-region');
-var startX, currentX, scrollLeft;
-
-slidebar.addEventListener('mousedown', function (e) {
-  startX = e.pageX - slidebar.offsetLeft;
-  scrollLeft = slidebar.scrollLeft;
-});
-
-slidebar.addEventListener('mousemove', function (e) {
-  if (!startX) {
-    return;
-  }
-  e.preventDefault();
-  currentX = e.pageX - slidebar.offsetLeft;
-  const distance = (currentX - startX) * 1.5;
-  slidebar.scrollLeft = scrollLeft - distance;
-});
-
-slidebar.addEventListener('mouseup', function (e) {
-  startX = null;
-});
-
-slidebar.addEventListener('touchstart', function (e) {
-  startX = e.touches[0].clientX - slidebar.offsetLeft;
-  scrollLeft = slidebar.scrollLeft;
-});
-
-slidebar.addEventListener('touchmove', function (e) {
-  if (!startX) {
-    return;
-  }
-  e.preventDefault();
-  currentX = e.touches[0].clientX - slidebar.offsetLeft;
-  const distance = (currentX - startX) * 1.5;
-  slidebar.scrollLeft = scrollLeft - distance;
-});
-
-slidebar.addEventListener('touchend', function (e) {
-  startX = null;
-});
 
