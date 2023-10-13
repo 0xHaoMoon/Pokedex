@@ -422,6 +422,10 @@ body{
     margin-right: 5vw;
     width: 50%;
   }
+
+  .hide{
+    display: hide;
+  }
   
   
   

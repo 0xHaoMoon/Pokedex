@@ -70,12 +70,13 @@ function generatePokemonHTML(pokemonData, id) {
       <div class="flex-center">
       <span class="number-span">#${id}</span>
     </div>
-      <div class="flex-center">
-        <span class="pkmName">${pkmNames}</span>
+      <div class="flex-center singlepkm">
+        <span id=pkmName class="pkmName">${pkmNames}</span>
       </div>
     </div>
   `;
 }
+
 
 
 //Diese Funktion lädt die Pokémon-Daten für die angegebene Region.
@@ -267,21 +268,22 @@ function slideout() {
 }
 
 
-//Diese Funktion filtert die Pokémon-Liste basierend auf der Sucheingabe.
 function searchPokemon() {
-  const input = document.querySelector('input[type="text"]');
-  const filter = input.value;
-  const pokemonDivs = document.querySelectorAll('.single-pokemon');
 
+  const input = document.querySelector('input[type="text"]');
+  const filter = input.value.toUpperCase();
+  const pokemonDivs = document.querySelectorAll('.single-Pokemon');
   for (let i = 0; i < pokemonDivs.length; i++) {
-    const name = pokemonDivs[i].querySelector('.pkm-name').innerHTML;
-    if (name.includes(filter)) {
+    const name = pokemonDivs[i].querySelector('.singlepkm span:first-child').innerHTML.toUpperCase();
+    if (name.indexOf(filter) > -1) {
       pokemonDivs[i].style.display = '';
     } else {
       pokemonDivs[i].style.display = 'none';
     }
   }
 }
+
+
 
 
 
